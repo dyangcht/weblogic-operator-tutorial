@@ -51,7 +51,7 @@ Copy and execute the commands in your Cloud Shell. You will need to copy, close 
 - Paste command into the Cloud Shell and enter return to execute it
 - Observe command output
 - Click **Access Kubeconfig**
-- Repeat for next command `mkdir -p $HOME/.kube`
+- Repeat for next command `mkdir -p $HOME/.kube` until all commands have been executed.
 
 ![alt text](images/oke/19.cloud.shell.part.1.png)
 
