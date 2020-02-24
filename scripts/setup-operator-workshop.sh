@@ -14,6 +14,7 @@ curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/P
 echo "Entering script to get Helm"
 echo "=================================================="
 curl -LO https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/PowerShell/scripts/get_helm.sh
+mkdir bin
 chmod 700 get_helm.sh
 ./get_helm.sh
 
