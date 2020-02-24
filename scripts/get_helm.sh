@@ -21,7 +21,7 @@ PROJECT_NAME="helm"
 TILLER_NAME="tiller"
 
 : ${USE_SUDO:="true"}
-: ${HELM_INSTALL_DIR:="bin"}
+: ${HELM_INSTALL_DIR:="$HOME/bin"}
 
 # initArch discovers the architecture for this system.
 initArch() {
