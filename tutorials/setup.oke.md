@@ -160,4 +160,4 @@ Click **Close** and the new cluster is shown on the *Cluster Details* page. When
 You may move on to the next lab whilst the provisioning of the cluster completes.
 
 
-### You are now ready to move to the next lab - [Lab 2: Create Developer Compute VM on Oracle Cloud Infrastructure](setup.dev.compute.instance.md)  ###
+### You are now ready to move to the next lab - [Lab 2: Setup Kubernetes Command-Line Tool **kubectl**](setup.kubectl.md)  ###
