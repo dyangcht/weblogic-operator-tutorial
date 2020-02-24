@@ -1,4 +1,4 @@
-# Lab 5: Install and configure Traefik  #
+# Lab 4: Install and configure Traefik  #
 
 The Oracle WebLogic Server Kubernetes Operator supports three load balancers: Traefik, Voyager, and Apache. Samples are provided in the [documentation](https://github.com/oracle/weblogic-kubernetes-operator/blob/2.0/kubernetes/samples/charts/README.md).
 
@@ -8,11 +8,11 @@ This tutorial demonstrates how to install the [Traefik](https://traefik.io/) ing
 
 Change to your WebLogic Operator local Git repository folder.
 
-    cd /u01/content/weblogic-kubernetes-operator/
+    cd ~/content/weblogic-kubernetes-operator/
 
 To install the Traefik operator in the traefik namespace with the provided sample values:
 
-    helm install stable/traefik \
+    ~/bin/helm install stable/traefik \
     --name traefik-operator \
     --namespace traefik \
     --values kubernetes/samples/charts/traefik/values.yaml  \
@@ -90,6 +90,8 @@ traefik-operator-dashboard   ClusterIP      10.96.202.131   <none>           80/
 ```
 Please note the EXTERNAL-IP of the *traefik-operator* service. This is the Public IP address of the Loadbalancer what you will use to open the WebLogic admin console and the sample application.
 
+Wait a few moments for the Loadbalancer to be provisioned.
+
 To print only the Public IP address you can execute this command:
 ```
 $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'
@@ -98,7 +100,7 @@ $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk
 
 Verify the `helm` charts:
 
-    $ helm list
+    $ ~/bin/helm list
     NAME            	REVISION	UPDATED                 	STATUS  	CHART         	NAMESPACE
     traefik-operator	1       	Mon Feb  4 10:58:41 2019	DEPLOYED	traefik-1.59.2	traefik  
 
@@ -112,4 +114,4 @@ For example:
     <a href="/dashboard/">Found</a>.
 
 
-### You are now ready to move to the next lab - [Lab 6: Deploy WebLogic Domain](deploy.weblogic_short.md) ###
+### You are now ready to move to the next lab - [Lab 5: Deploy WebLogic Domain](deploy.weblogic_short.md) ###

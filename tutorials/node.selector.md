@@ -1,4 +1,4 @@
-# Lab 10: Assigning WebLogic Pods to Nodes #
+# Lab 9: Assigning WebLogic Pods to Nodes #
 
 When you create a Managed server (Pod), the Kubernetes scheduler selects a node for the Pod to run on. The scheduler ensures that, for each resource type, the sum of the resource requests of the scheduled Containers is less than the capacity of the node. Note that although actual memory or CPU resource usage on nodes is very low, the scheduler still refuses to place a Pod on a node if the capacity check fails.
 
@@ -86,7 +86,7 @@ spec:
 ```
 Save the changes and apply the new domain resource definition.
 ```
-$ kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f ~/content/domain.yaml
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The operator according to the changes will start to relocate servers. Poll the pod information and wait until the expected result:
@@ -110,10 +110,10 @@ node/130.61.84.41 labeled
 ```
 Delete or turn into comment the entries you added for node assignment in your `domain.yaml` and apply:
 ```
-$ kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f ~/content/domain.yaml
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
 
 
-### You are now ready to move to the next lab - [Lab 11: Assigning WebLogic Pods to Licensed Nodes](node.selector.license.md) ###
+### You are now ready to move to the next lab - [Lab 10: Assigning WebLogic Pods to Licensed Nodes](node.selector.license.md) ###

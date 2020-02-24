@@ -1,4 +1,4 @@
-# Lab 11: Assigning WebLogic Pods to Licensed Node #
+# Lab 10: Assigning WebLogic Pods to Licensed Node #
 
 This use case similar to described in [Assigning WebLogic Pods to Nodes lab](node.selector.md) where individual servers/pods were asssigned to specific node(s). However the focus in this use case on the license coverage.
 
@@ -78,9 +78,9 @@ node/130.61.84.41 labeled
 ```
 Delete or turn into comment the entries you added for node assignment in your `domain.yaml` and apply:
 ```
-$ kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f ~/content/domain.yaml
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The pod reallocation/restart can happen based on the scheduler decision.
 
-## You are now ready to move to the next lab - [Lab 12: Setup Kubernetes Dashboard Access (Optional)](setup.kube.dashboard.md) ###
+## You are now ready to move to the next lab - [Lab 11: Setup Kubernetes Dashboard Access (Optional)](setup.kube.dashboard.md) ###

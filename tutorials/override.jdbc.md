@@ -1,4 +1,4 @@
-# Lab 8: Override domain configuration  #
+# Lab 7: Override domain configuration  #
 
 You can modify the WebLogic domain configuration for both the "domain in persistent volume" and the "domain in image" options before deploying a domain resource:
 
@@ -29,11 +29,11 @@ The operator requires a different file name format for override templates. For J
 The custom WebLogic image - you created using Oracle Pipelines - has a JDBC Datasource called *testDatasource*. So you have to create a template which name is *jdbc-testDatasource.xml*.
 Before create the necessary files first make a directory which will contain only the situational JDBC configuration template and a `version.txt` file.
 ```
-mkdir -p /u01/override
+mkdir -p ~/content/override
 ```
 Create the template file:
 ```
-cat > /u01/override/jdbc-testDatasource.xml <<'EOF'
+cat > ~/content/override/jdbc-testDatasource.xml <<'EOF'
 <?xml version='1.0' encoding='UTF-8'?>
 <jdbc-data-source xmlns="http://xmlns.oracle.com/weblogic/jdbc-data-source"
                   xmlns:f="http://xmlns.oracle.com/weblogic/jdbc-data-source-fragment"
@@ -56,13 +56,13 @@ Note! This template contains macro to override the JDBC user name and URL parame
 
 Now create the *version.txt* which reflects the version of the operator.
 ```
-cat > /u01/override/version.txt <<EOF
+cat > ~/content/override/version.txt <<EOF
 2.0
 EOF
 ```
 Now create a Kubernetes configuration map (*jdbccm*) from the directory of template and version file.
 ```
-kubectl -n sample-domain1-ns create cm jdbccm --from-file /u01/override
+kubectl -n sample-domain1-ns create cm jdbccm --from-file ~/content/override
 kubectl -n sample-domain1-ns label cm jdbccm weblogic.domainUID=sample-domain1
 ```
 Please note the name of the configuration map which is: *jdbccm*.
@@ -149,7 +149,7 @@ To stop all running WebLogic Server pods in your domain, apply a changed resourc
 
 2. Apply changes:
 ```
-kubectl apply -f /u01/domain.yaml
+kubectl apply -f ~/content/domain.yaml
 ```
 Check the pod's status:
 ```
@@ -166,7 +166,7 @@ Wait till all pods are terminated and no resources found.
 
 4. Apply changes:
 ```
-kubectl apply -f /u01/domain.yaml
+kubectl apply -f ~/content/domain.yaml
 ```
 Check the pod's status periodically and wait till all the pods are up and ready:
 ```
@@ -187,4 +187,4 @@ You have to see the following changes:
 - **Database URL**: Your JDBC URL connection string
 
 
-### You are now ready to move to the next lab - [Lab 9: Updating deployed application by rolling restart to the new image](update.application_short.md) ###
+### You are now ready to move to the next lab - [Lab 8: Updating deployed application by rolling restart to the new image](update.application_short.md) ###

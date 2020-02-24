@@ -1,4 +1,4 @@
-# Lab 9: Updating Deployed Application by Rolling Restart to the New Image #
+# Lab 8: Updating Deployed Application by Rolling Restart to the New Image #
 
 This tutorial implements the Docker image with the WebLogic domain inside the image deployment. This means all the artefacts including the deployed applications, domain related files are stored within the image. This results new WebLogic Docker image every time when the application modified. In this - widely adopted - approach the image is the packaging unit instead of the Web/Enterprise Application Archive (*war*, *ear*).
 
@@ -15,7 +15,7 @@ Don't forget the leading spaces to keep the proper indentation.
 
 Apply the domain resource changes:
 ```
-kubectl apply -f /u01/domain.yaml
+kubectl apply -f !/content/domain.yaml
 ```
 You can immediately check the status of your servers/pods (you should observe the restart of WLS domain):
 ```
@@ -35,4 +35,4 @@ During the rolling restart check your web application periodically. If the respo
 ![](images/update.application/004.check.changes.png)
 
 
-### You are now ready to move to the next lab - [Lab 10: Assigning WebLogic Pods to Nodes](node.selector.md) ###
+### You are now ready to move to the next lab - [Lab 9: Assigning WebLogic Pods to Nodes](node.selector.md) ###

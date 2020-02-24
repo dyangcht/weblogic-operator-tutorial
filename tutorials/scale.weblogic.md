@@ -1,4 +1,4 @@
-# Lab 7: Scaling WebLogic cluster  #
+# Lab 6: Scaling WebLogic cluster  #
 
 WebLogic Server supports two types of clustering configurations, configured and dynamic. Configured clusters are created by manually configuring each individual Managed Server instance. In dynamic clusters, the Managed Server configurations are generated from a single, shared template.  With dynamic clusters, when additional server capacity is needed, new server instances can be added to the cluster without having to manually configure them individually. Also, unlike configured clusters, scaling up of dynamic clusters is not restricted to the set of servers defined in the cluster but can be increased based on runtime demands.
 
@@ -22,7 +22,7 @@ clusters:
 ```
 Modify `replicas` to 3 and save changes. Apply the changes using `kubectl`:
 ```
-kubectl apply -f /u01/domain.yaml
+kubectl apply -f ~/content/domain.yaml
 ```
 Check the changes in the number of pods using `kubectl`:
 ```
@@ -53,4 +53,4 @@ Note! Do not use the console to scale the cluster. The operator controls this op
 
 ---
 
-### You are now ready to move to the next lab - [Lab 8: Override JDBC Datasource parameters](override.jdbc.md) ###
+### You are now ready to move to the next lab - [Lab 7: Override JDBC Datasource parameters](override.jdbc.md) ###

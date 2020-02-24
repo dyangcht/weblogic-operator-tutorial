@@ -1,4 +1,4 @@
-# Lab 12: Setup Kubernetes Dashboard Access (Optional) #
+# Lab 11: Setup Kubernetes Dashboard Access (Optional) #
 
 Kubernetes Dashboard is a web-based user interface that you can use as an alternative to the Kubernetes **kubectl** command line tool to:
 
@@ -14,7 +14,7 @@ In contrast to the Kubernetes Dashboard, Container Engine for Kubernetes enables
 To config the Kubernetes Dashboard for controlling Kubernetes clusters the following steps need to be completed:
 
 - a provisioned Oracle Container Engine for Kubernetes (OKE) cluster
-- a provisioned Developer Compute VM on OCI
+- an Oracle Cloud Shell
 - a configured **kubectl** command-line tool
 - a PuTTY session
 

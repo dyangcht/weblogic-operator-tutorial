@@ -1,4 +1,4 @@
-# Lab 6: Deploy WebLogic domain  #
+# Lab 5: Deploy WebLogic domain  #
 
 ## Preparing the Kubernetes cluster to run WebLogic domains ##
 
@@ -19,11 +19,11 @@ Once you have your domain namespace (WebLogic domain not yet deployed) you have 
 
 Make sure before execute domain `helm` install you are in the WebLogic Operator's local Git repository folder.
 ```
-cd /u01/content/weblogic-kubernetes-operator/
+cd ~/content/weblogic-kubernetes-operator/
 ```
 To update operator execute the following `helm upgrade` command:
 ```
-helm upgrade \
+~/bin/helm upgrade \
   --reuse-values \
   --set "domainNamespaces={sample-domain1-ns}" \
   --wait \
@@ -33,7 +33,7 @@ helm upgrade \
 
 To update Traefik execute the following `helm upgrade` command:
 ```
-helm upgrade \
+~/bin/helm upgrade \
   --reuse-values \
   --set "kubernetes.namespaces={traefik,sample-domain1-ns}" \
   --wait \
@@ -48,13 +48,13 @@ To deploy WebLogic domain you need to create a domain resource definition which 
 
 We provided for you domain.yaml file that contains yaml representation of the custom resource object. Please copy it locally
 ```
-curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >/u01/domain.yaml
+curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >~/content/domain.yaml
 ```
 Please review it with your favourite editor.
 
 Create Domain custom resource object by applying the following command:
 ```
-kubectl apply -f /u01/domain.yaml
+kubectl apply -f ~/content/domain.yaml
 ```
 Check the introspector job which needs to be run first:
 ```
@@ -135,4 +135,4 @@ Refresh the page and notice the hostname changes. It reflects the managed server
 You can ignore the database error as the datasource has not be set up yet. We will configure the datasource in the Override JDBC Datasource Parameters lab.
 
 
-### You are now ready to move to the next lab - [Lab 7: Scaling WebLogic Cluster](scale.weblogic.md) ###
+### You are now ready to move to the next lab - [Lab 6: Scaling WebLogic Cluster](scale.weblogic.md) ###
