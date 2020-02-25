@@ -1,4 +1,4 @@
-# Oracle WebLogic Operator Tutorial #
+# Oracle WebLogic on Kubernetes Tutorial #
 
 ### Deploy Oracle WebLogic Domain (*Domain-home-in-image*) on Kubernetes using Oracle WebLogic Operator  ###
 
