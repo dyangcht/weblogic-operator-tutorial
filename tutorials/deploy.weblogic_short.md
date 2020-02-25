@@ -62,9 +62,9 @@ $ kubectl get pod -n sample-domain1-ns
 NAME                                         READY     STATUS              RESTARTS   AGE
 sample-domain1-introspect-domain-job-kcn4n   0/1       ContainerCreating   0          7s
 ```
-Check periodically the pods in the domain namespace and soon you will see the servers are starting:
+Check the pods in the domain namespace with the watch option `-w` and soon you will see the servers are starting:
 ```
-$ kubectl get po -n sample-domain1-ns -o wide
+$ kubectl get po -n sample-domain1-ns -o wide -w
 NAME                             READY     STATUS    RESTARTS   AGE       IP            NODE            NOMINATED NODE
 sample-domain1-admin-server      1/1       Running   0          2m        10.244.2.10   130.61.84.41    <none>
 sample-domain1-managed-server1   1/1       Running   0          1m        10.244.2.11   130.61.84.41    <none>
