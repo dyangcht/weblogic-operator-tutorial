@@ -48,7 +48,8 @@ To deploy WebLogic domain you need to create a domain resource definition which 
 
 We provided for you domain.yaml file that contains yaml representation of the custom resource object. Please copy it locally
 ```
-curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >~/content/domain.yaml
+curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/CloudShell/k8s/domain_short_apac.yaml >~/content/domain.yaml
+
 ```
 Please review it with your favourite editor.
 

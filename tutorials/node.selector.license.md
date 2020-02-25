@@ -52,11 +52,11 @@ serverPod:
   nodeSelector:
     licensed-for-weblogic: true
 ```
-Be careful with the indentation. You can double check the syntax in the sample [domain.yaml](https://github.com/nagypeter/weblogic-operator-tutorial/blob/master/k8s/domain.yaml) where this part turned into comment.
+Be careful with the indentation. You can double check the syntax in the sample [domain.yaml](https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/CloudShell/k8s/domain_short_apac.yaml) where this part turned into comment.
 
 Save the changes and apply the new domain resource definition.
 ```
-$ kubectl apply -f ~/git.repos/@nagypeter/weblogic-operator-tutorial/k8s/domain.yaml
+$ kubectl apply -f ~/content/domain.yaml
 domain.weblogic.oracle/sample-domain1 configured
 ```
 The operator according to the changes will start to relocate servers. Poll the pod information and wait until the expected result:

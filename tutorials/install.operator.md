@@ -8,7 +8,8 @@ An operator is an application-specific controller that extends Kubernetes to cre
 In your Oracle Cloud Shell, run a single remote script to setup the workshop files and tools:
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/PowerShell/scripts/setup-operator-workshop.sh)
+bash <(curl -s https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/CloudShell/scripts/setup-operator-workshop.sh)
+
 ```
 
 

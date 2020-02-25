@@ -3,17 +3,18 @@
 #usage:
 # bash <(curl -s https://gitlab.com/heungheung/wlsoprvm/-/raw/master/setup-operator-workshop.sh)
 # bash <(curl -s https://raw.githubusercontent.com/nagypeter/vmcontrol/master/setup-operator-workshop.sh)
+# bash <(curl -s https://github.com/kwanwan/weblogic-operator-tutorial/blob/CloudShell/scripts/setup-operator-workshop.sh)
 echo
 echo "This scripts is to setup Cloud Shell for WLS Opr Workshop"
 echo
 # clone the wlsopr sample repo
 echo "Entering script to clone git repo"
 echo "=================================================="
-curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/PowerShell/scripts/clone-weblogic-kubernetes-operator.sh | bash
+curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/CloudShell/scripts/clone-weblogic-kubernetes-operator.sh | bash
 
 echo "Entering script to get Helm"
 echo "=================================================="
-curl -LO https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/PowerShell/scripts/get_helm.sh
+curl -LO https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/CloudShell/scripts/get_helm.sh
 mkdir bin
 chmod 700 get_helm.sh
 ./get_helm.sh

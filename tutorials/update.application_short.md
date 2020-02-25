@@ -15,7 +15,7 @@ Don't forget the leading spaces to keep the proper indentation.
 
 Apply the domain resource changes:
 ```
-kubectl apply -f !/content/domain.yaml
+kubectl apply -f ~/content/domain.yaml
 ```
 You can immediately check the status of your servers/pods (you should observe the restart of WLS domain):
 ```
