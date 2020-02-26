@@ -29,6 +29,13 @@ If you don't see the Cloud Shell icon, then follow the steps below to create a p
 
 ---
 
+First you need to find out the group you belong to.
+
+Open your User Settings and select Groups on the left hand resource options.
+
+Take note of the group you belong to. For example `Administrators`. You will need this information when creating the policy.
+
+![alt text](images/oke/006.user.group.png)
 
 Open the navigation menu. Under **Identity**, click **Policies**.
 
