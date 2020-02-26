@@ -78,7 +78,7 @@ Note the values:
 
 Execute the following `~/bin/helm install`:
 ```
-helm install kubernetes/charts/weblogic-operator \
+~/bin/helm install kubernetes/charts/weblogic-operator \
   --name sample-weblogic-operator \
   --namespace sample-weblogic-operator-ns \
   --set image=oracle/weblogic-kubernetes-operator:2.0 \

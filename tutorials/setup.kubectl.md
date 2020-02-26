@@ -8,6 +8,51 @@ To config the **kubectl** command-line tool for controlling Kubernetes clusters 
 
 - a provisioned Oracle Container Engine for Kubernetes (OKE) cluster
 - an Oracle Cloud Shell
+- policy to grant user access to Cloud Shell
+
+
+## Create Policy to Grant User Access to Cloud Shell ##
+
+Oracle Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console. Cloud Shell is free to use (within monthly tenancy limits), and provides access to a Linux shell, with a pre-authenticated Oracle Cloud Infrastructure CLI and other useful tools for following Oracle Cloud Infrastructure service tutorials and labs. Cloud Shell is a feature available to all OCI users, accessible from the Console. Your Cloud Shell will appear in the Oracle Cloud Console as a persistent frame of the Console, and will stay active as you navigate to different pages of the Console.
+
+However, if you do not see your Cloud Shell access in your Oracle Cloud Console, then you probably have not been granted access to it. This would be the case if you are using your Corporate UC account and you was not set up to belong to a group that has been granted with the Cloud Shell access policy. To get access, you will need to create a Cloud Shell policy.
+
+---
+
+**Note**: A policy for Cloud Shell is a policy that applies to a user group. You **MAY NOT** need to create this if you have access to the Cloud Shell.
+
+Check if you have Cloud Shell access along the top of your Console menu with the Cloud Shell icon.
+
+![alt text](images/oke/20.cloud.shell.access.png)
+
+If you don't see the Cloud Shell icon, then follow the steps below to create a policy for access.
+
+---
+
+
+Open the navigation menu. Under **Identity**, click **Policies**.
+
+![alt text](images/oke/004.oci.console.png)
+
+Select on left hand side menu a "root" compartment for your account (see screenshot). A list of the policies in the compartment you're viewing is displayed. If you want to attach the policy to a compartment other than the one you're viewing, select the desired compartment from the list on the left. Click **Create Policy**.
+
+![alt text](images/oke/005.policies.png)
+
+Enter the following:
+
+- **Name:** `Cloud-Shell-Policy` A unique name for the policy.
+- **Description:** `policy to grant access to Cloud Shell` A friendly description.
+- **Policy Versioning:** Select **Keep Policy Current**. It ensures that the policy stays current with any future changes to the service's definitions of verbs and resources.
+- **Statement:** A policy statement. It MUST be: `allow group <GROUP-NAME> to use cloud-shell in tenancy`. Replace <GROUP-NAME> with your group, for example `Administrators`
+- **Tags:** Don't apply tags.
+
+
+![alt text](images/oke/006.create.cloud.shell.policy.png)
+
+
+Click **Create**.
+
+Sign out and sign back in again.
 
 
 ## Configure Kubernetes command-line Tool `kubectl` ##

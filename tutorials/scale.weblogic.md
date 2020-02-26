@@ -42,7 +42,7 @@ Note! You can edit directly the existing (running) domain resource file by using
 ```
 kubectl edit domain DOMAIN_UID -n DOMAIN_NAMESPACE
 ```
-In case if you use default settings the syntax is:
+For example:
 ```
 kubectl edit domain sample-domain1 -n sample-domain1-ns
 ```
