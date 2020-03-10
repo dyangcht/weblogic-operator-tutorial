@@ -116,8 +116,8 @@ And follow its progress.
 kubectl get po -n sample-domain1-ns -o wide -w
 ```
 
-
 **End of Note**
+
 ---
 
 In order to access any application or admin console deployed on WebLogic you have to configure *Traefik* ingress. OCI Load balancer is already assigned during *Traefik* install in the previous step.
