@@ -1,4 +1,4 @@
-# Welcome to Oracle WebLogic Operator Tutorial #
+# Welcome to Oracle WebLogic on Kubernetes Tutorial #
 
 ### This repository contains tutorials hat allows you to run WebLogic Server on Kubernetes cluster: ###
 
