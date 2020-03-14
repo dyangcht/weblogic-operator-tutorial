@@ -73,13 +73,14 @@ Execute `oci setup config` command to setup the CLI:
 	Enter a location for your config [/home/oracle/.oci/config]:
 
 Enter to accept default directory location `/home/oracle/.oci/config`. Provide your user and tenancy OCIDs.
-<pre><code>Enter a user OCID: <em><i><YOUR_USER_OCID></i></em>
-Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea
+
+<pre><code>Enter a user OCID: &lt;YOUR_USER_OCID&gt;
+Enter a tenancy OCID: <b><i>ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea</i></b>
 </code></pre>
 
 Enter your region. You can see in the console (browser) at the top right area. It has to be *us-ashburn-1*, if not type the proper region code.
 
-	Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): us-ashburn-1
+<pre><code>Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): <b><i>us-ashburn-1</i></b></code></pre>
 
 Generate new API signing key by entering `Y` at the prompt. For the location accept default.
 
