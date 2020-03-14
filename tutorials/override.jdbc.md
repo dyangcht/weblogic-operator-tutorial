@@ -63,7 +63,12 @@ EOF
 Now create a Kubernetes configuration map (*jdbccm*) from the directory of template and version file.
 ```
 kubectl -n sample-domain1-ns create cm jdbccm --from-file /u01/override
+configmap/jdbccm created
+```
+Label the jdbccm
+```
 kubectl -n sample-domain1-ns label cm jdbccm weblogic.domainUID=sample-domain1
+configmap/jdbccm labeled
 ```
 Please note the name of the configuration map which is: *jdbccm*.
 
