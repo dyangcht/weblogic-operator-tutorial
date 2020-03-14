@@ -161,7 +161,8 @@ To stop all running WebLogic Server pods in your domain, apply a changed resourc
 
 2. Apply changes:
 ```
-kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f /u01/domain.yaml
+domain.weblogic.oracle/sample-domain1 configured
 ```
 Check the pod's status:
 ```
@@ -170,7 +171,7 @@ NAME                             READY     STATUS        RESTARTS   AGE
 sample-domain1-admin-server      1/1       Terminating   0          1h
 sample-domain1-managed-server1   1/1       Terminating   0          1h
 $ kubectl get po -n sample-domain1-ns
-No resources found.
+No resources found in sample-domain1-ns namespace.
 ```
 Wait till all pods are terminated and no resources found.
 
@@ -178,7 +179,8 @@ Wait till all pods are terminated and no resources found.
 
 4. Apply changes:
 ```
-kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f /u01/domain.yaml
+domain.weblogic.oracle/sample-domain1 configured
 ```
 Check the pod's status periodically and wait till all the pods are up and ready:
 ```
