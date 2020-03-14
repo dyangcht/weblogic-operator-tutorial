@@ -15,7 +15,7 @@ The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the 
 
 For example:
     
-    vi /u01/domain.yaml
+    $ vi /u01/domain.yaml
     
 
 Find the following part:
@@ -27,11 +27,11 @@ clusters:
 ```
 Modify `replicas` to 3 and save changes. Apply the changes using `kubectl`:
 ```
-kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f /u01/domain.yaml
 ```
 Check the changes in the number of pods using `kubectl`:
 ```
-kubectl get po -n sample-domain1-ns
+$ kubectl get po -n sample-domain1-ns
 NAME                             READY     STATUS        RESTARTS   AGE
 sample-domain1-admin-server      1/1       Running       0          57m
 sample-domain1-managed-server1   1/1       Running       0          56m
@@ -45,11 +45,11 @@ Soon the managed server 3 will appear and will be ready within a few minutes. Yo
 
 Note! You can edit directly the existing (running) domain resource file by using the `kubectl edit` command. In this case your `domain.yaml` available on your desktop will not reflect the changes of the running domain's resource.
 ```
-kubectl edit domain DOMAIN_UID -n DOMAIN_NAMESPACE
+$ kubectl edit domain DOMAIN_UID -n DOMAIN_NAMESPACE
 ```
 In case if you use default settings the syntax is:
 ```
-kubectl edit domain sample-domain1 -n sample-domain1-ns
+$ kubectl edit domain sample-domain1 -n sample-domain1-ns
 ```
 It will use `vi` like editor.
 
