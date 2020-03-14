@@ -11,7 +11,7 @@ The operator provides several ways to initiate scaling of WebLogic clusters, inc
 
 ## Scaling WebLogic cluster using `kubectl`  ##
 
-The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes edit the *domain.yaml* and apply changes using `kubectl`. Use your favourite editor to open `<em>/u01/domain.yaml</em>`.
+The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the replicas property within a domain resource.  To retain changes edit the *domain.yaml* and apply changes using `kubectl`. Use your favourite editor to open `/u01/domain.yaml`.
 
 For example:
     
