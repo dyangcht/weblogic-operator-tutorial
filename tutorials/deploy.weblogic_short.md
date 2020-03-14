@@ -110,13 +110,13 @@ No resources found.
 You can now retry the deployment again by running:
 
 ```
-kubectl apply -f ~/content/domain.yaml
+$ kubectl apply -f ~/content/domain.yaml
 ```
 
 And follow its progress.
 
 ```
-kubectl get po -n sample-domain1-ns -o wide -w
+$ kubectl get po -n sample-domain1-ns -o wide -w
 ```
 
 **End of Note**
@@ -130,7 +130,7 @@ As a simple solution the best is to configure path routing which will route the 
 
 Execute the following ingress resource definition:
 ```
-cat << EOF | kubectl apply -f -
+$ cat << EOF | kubectl apply -f -
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
