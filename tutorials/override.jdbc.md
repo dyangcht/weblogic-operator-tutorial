@@ -123,6 +123,7 @@ Use this sample:
 Now create a label for your secret.
 
     $ kubectl -n sample-domain1-ns label secret dbsecret weblogic.domainUID=sample-domain1
+    secret/dbsecret labeled
 
 Please note values, for example (*username=WLSOPR*, *password='Wel2019-Come1#'*, *url=jdbc:oracle:thin:@db.wlsopr.orcl.cloud:1521/wls_pdb1.subXXXXXXX.mydbswlsmydbswl.oraclevcn.com*) and the name of the secret which is: *dbsecret*.
 
