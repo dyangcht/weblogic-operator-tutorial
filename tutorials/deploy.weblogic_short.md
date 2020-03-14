@@ -4,13 +4,15 @@
 
 Create the domain namespace:
 ```
-kubectl create namespace sample-domain1-ns
+$ kubectl create namespace sample-domain1-ns
+namespace/sample-domain1-ns created
 ```
 Create a Kubernetes secret containing the Administration Server boot credentials:
 ```
-kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-credentials \
+$ kubectl -n sample-domain1-ns create secret generic sample-domain1-weblogic-credentials \
   --from-literal=username=weblogic \
   --from-literal=password=welcome1
+secret/sample-domain1-weblogic-credentials created
 ```
 
 ## Update Traefik loadbalancer and WebLogic Operator configuration ##
@@ -19,11 +21,11 @@ Once you have your domain namespace (WebLogic domain not yet deployed) you have 
 
 Make sure before execute domain `helm` install you are in the WebLogic Operator's local Git repository folder.
 ```
-cd /u01/content/weblogic-kubernetes-operator/
+$ cd /u01/content/weblogic-kubernetes-operator/
 ```
 To update operator execute the following `helm upgrade` command:
 ```
-helm upgrade \
+$ helm upgrade \
   --reuse-values \
   --set "domainNamespaces={sample-domain1-ns}" \
   --wait \
@@ -33,7 +35,7 @@ helm upgrade \
 
 To update Traefik execute the following `helm upgrade` command:
 ```
-helm upgrade \
+$ helm upgrade \
   --reuse-values \
   --set "kubernetes.namespaces={traefik,sample-domain1-ns}" \
   --wait \
@@ -48,13 +50,14 @@ To deploy WebLogic domain you need to create a domain resource definition which 
 
 We provided for you domain.yaml file that contains yaml representation of the custom resource object. Please copy it locally
 ```
-curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >/u01/domain.yaml
+$ curl -LSs https://raw.githubusercontent.com/kwanwan/weblogic-operator-tutorial/master/k8s/domain_short_apac.yaml >/u01/domain.yaml
 ```
 Please review it with your favourite editor.
 
 Create Domain custom resource object by applying the following command:
 ```
-kubectl apply -f /u01/domain.yaml
+$ kubectl apply -f /u01/domain.yaml
+domain.weblogic.oracle/sample-domain1 created
 ```
 Check the introspector job which needs to be run first:
 ```
