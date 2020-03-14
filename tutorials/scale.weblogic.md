@@ -15,7 +15,7 @@ The easiest way to scale a WebLogic cluster in Kubernetes is to simply edit the 
 
 For example:
     
-    vi /u01/domain.yml
+    vi /u01/domain.yaml
     
 Find the following part:
 ```
