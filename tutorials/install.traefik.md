@@ -8,11 +8,11 @@ This tutorial demonstrates how to install the [Traefik](https://traefik.io/) ing
 
 Change to your WebLogic Operator local Git repository folder.
 
-    cd /u01/content/weblogic-kubernetes-operator/
+    $ cd /u01/content/weblogic-kubernetes-operator/
 
 To install the Traefik operator in the traefik namespace with the provided sample values:
 
-    helm install stable/traefik \
+    $ helm install stable/traefik \
     --name traefik-operator \
     --namespace traefik \
     --values kubernetes/samples/charts/traefik/values.yaml  \
@@ -83,7 +83,7 @@ The output should be similar:
 
 The Traefik installation is basically done. Verify the Traefik (Loadbalancer) services:
 ```
-kubectl get service -n traefik
+$ kubectl get service -n traefik
 NAME                         TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                      AGE
 traefik-operator             LoadBalancer   10.96.154.112   129.213.172.44   80:32396/TCP,443:32736/TCP   2h
 traefik-operator-dashboard   ClusterIP      10.96.202.131   <none>           80/TCP                       2h
