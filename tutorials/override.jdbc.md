@@ -29,11 +29,11 @@ The operator requires a different file name format for override templates. For J
 The custom WebLogic image - you created using Oracle Pipelines - has a JDBC Datasource called *testDatasource*. So you have to create a template which name is *jdbc-testDatasource.xml*.
 Before create the necessary files first make a directory which will contain only the situational JDBC configuration template and a `version.txt` file.
 ```
-mkdir -p /u01/override
+$ mkdir -p /u01/override
 ```
 Create the template file:
 ```
-cat > /u01/override/jdbc-testDatasource.xml <<'EOF'
+$ cat > /u01/override/jdbc-testDatasource.xml <<'EOF'
 <?xml version='1.0' encoding='UTF-8'?>
 <jdbc-data-source xmlns="http://xmlns.oracle.com/weblogic/jdbc-data-source"
                   xmlns:f="http://xmlns.oracle.com/weblogic/jdbc-data-source-fragment"
@@ -56,18 +56,18 @@ Note! This template contains macro to override the JDBC user name and URL parame
 
 Now create the *version.txt* which reflects the version of the operator.
 ```
-cat > /u01/override/version.txt <<EOF
+$ cat > /u01/override/version.txt <<EOF
 2.0
 EOF
 ```
 Now create a Kubernetes configuration map (*jdbccm*) from the directory of template and version file.
 ```
-kubectl -n sample-domain1-ns create cm jdbccm --from-file /u01/override
+$ kubectl -n sample-domain1-ns create cm jdbccm --from-file /u01/override
 configmap/jdbccm created
 ```
 Label the jdbccm
 ```
-kubectl -n sample-domain1-ns label cm jdbccm weblogic.domainUID=sample-domain1
+$ kubectl -n sample-domain1-ns label cm jdbccm weblogic.domainUID=sample-domain1
 configmap/jdbccm labeled
 ```
 Please note the name of the configuration map which is: *jdbccm*.
@@ -111,17 +111,17 @@ Events:  <none>
 The last thing what you need to create the secret which contains the values of the JDBC user name and URL parameters.
 To create secret execute the following `kubectl` command:
 
-    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=<DB Username> --from-literal=password=<DB Password> --from-literal=url=<JDBC URL>
+    $ kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=<DB Username> --from-literal=password=<DB Password> --from-literal=url=<JDBC URL>
 
 Substitute the DB username, password and JDBC URL provided by your instructor.
 
-For example:
+Use this sample:
 
-    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=WLSOPR --from-literal=password='Wel2019-Come1#' --from-literal=url=jdbc:oracle:thin:@129.213.145.129:1521/PDB1.sub03040224550.dbvcn.oraclevcn.com
+    $ kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=WLSOPR --from-literal=password='Wel2019-Come1#' --from-literal=url=jdbc:oracle:thin:@129.213.145.129:1521/PDB1.sub03040224550.dbvcn.oraclevcn.com
 
 Now create a label for your secret.
 
-    kubectl -n sample-domain1-ns label secret dbsecret weblogic.domainUID=sample-domain1
+    $ kubectl -n sample-domain1-ns label secret dbsecret weblogic.domainUID=sample-domain1
 
 Please note values, for example (*username=WLSOPR*, *password='Wel2019-Come1#'*, *url=jdbc:oracle:thin:@db.wlsopr.orcl.cloud:1521/wls_pdb1.subXXXXXXX.mydbswlsmydbswl.oraclevcn.com*) and the name of the secret which is: *dbsecret*.
 
@@ -136,6 +136,11 @@ Note the value of the Database User and the Database URL.
 The final step is to modify the domain resource definition (*domain.yaml*) to include override configuration map and secret.
 
 Open the *domain.yaml* and in the `spec:` section add (or append) the following entries. Or you may uncomment these entries at the end of the file. Be careful to keep the indentation properly:
+
+Edit the domain.yaml
+
+    $ vi /u01/domain.yaml
+
 ```
 spec:
   [ ... ]
