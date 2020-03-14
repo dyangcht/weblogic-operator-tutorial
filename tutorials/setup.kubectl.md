@@ -132,7 +132,8 @@ A dialog pops up which contains the customized OCI command that you need to exec
 Copy and execute the commands on your desktop where OCI CLI was configured. For example:
 
 	$ mkdir -p $HOME/.kube
-	$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaaeztqzjzhayteztcmm2ginjqgnswgzbuga3dantdmc3tizjrgztd --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0 
+	$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaaeztqzjzhayteztcmm2ginjqgnswgzbuga3dantdmc3tizjrgztd --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0
+	New config written to the Kubeconfig file /home/opc/.kube/config
 
 **Note**: For `kubectl` try to use by defult `$HOME/.kube/config` configuration file. If you save it to a different location and use different filename, don't forget to set the `KUBECONFIG`  variable to the configuration file. E.g.:
 
@@ -161,7 +162,7 @@ Then execute the role binding command using your(!) user OCID:
 For example:
 
 	$ kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=ocid1.user.oc1..AGAIN_THIS_IS_EXAMPLE
-	clusterrolebinding "my-cluster-admin-binding" created
+	clusterrolebinding.rbac.authorization.k8s.io/my-cluster-admin-binding created
 
 Congratulation, now your OCI OKE environment is ready to deploy your WebLogic domain.
 
