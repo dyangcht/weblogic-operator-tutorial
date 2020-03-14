@@ -24,7 +24,7 @@ Before using the CLI, you have to create a config file that contains the require
 
 Before you start the setup collect the necessary information using your OCI console.
 
-<pre><code>>- User OCID
+<pre><code>- User OCID
 - Tenancy OCID: <b><i>ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea</i></b>
 - Region: <b><i>us-ashburn-1</i></b>
 </code></pre>
@@ -75,11 +75,11 @@ Execute `oci setup config` command to setup the CLI:
 Enter to accept default directory location `/home/oracle/.oci/config`. Provide your user and tenancy OCIDs.
 
 	Enter a user OCID: <YOUR_USER_OCID>
-	Enter a tenancy OCID: <YOUR_TENANCY_OCID>
+	Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea
 
-Enter your region. You can see in the console (browser) at the top right area. It has to be *eu-frankfurt-1*, if not type the proper region code.
+Enter your region. You can see in the console (browser) at the top right area. It has to be *us-ashburn-1*, if not type the proper region code.
 
-	Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): <YOUR_REGION>
+	Enter a region (e.g. eu-frankfurt-1, uk-london-1, us-ashburn-1, us-phoenix-1): us-ashburn-1
 
 Generate new API signing key by entering `Y` at the prompt. For the location accept default.
 
@@ -131,11 +131,11 @@ A dialog pops up which contains the customized OCI command that you need to exec
 Copy and execute the commands on your desktop where OCI CLI was configured. For example:
 
 	$ mkdir -p $HOME/.kube
-	$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.eu-frankfurt-1.aaaaaaaaaezwenlfgm4gkmzxha2tamtcgjqwmoldmu3tcnlfgc2tcyzzmrqw --file $HOME/.kube/config --region eu-frankfurt-1
+	$ oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.iad.aaaaaaaaaeztqzjzhayteztcmm2ginjqgnswgzbuga3dantdmc3tizjrgztd --file $HOME/.kube/config --region us-ashburn-1 --token-version 2.0.0 
 
 **Note**: For `kubectl` try to use by defult `$HOME/.kube/config` configuration file. If you save it to a different location and use different filename, don't forget to set the `KUBECONFIG`  variable to the configuration file. E.g.:
 
-	export KUBECONFIG=another_folder_path/kubernetes_config_file_name
+	$ export KUBECONFIG=$HOME/.kube/config
 
 
 Now check that `kubectl` is working, for example using the `get node` command:
@@ -155,7 +155,7 @@ In order to have permission to access the Kubernetes cluster, you need to author
 
 Then execute the role binding command using your(!) user OCID:
 
-	kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=<YOUR_USER_OCID>
+	$ kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole=cluster-admin --user=<YOUR_USER_OCID>
 
 For example:
 
