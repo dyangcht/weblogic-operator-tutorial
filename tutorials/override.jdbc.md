@@ -117,7 +117,7 @@ Substitute the DB username, password and JDBC URL provided by your instructor.
 
 For example:
 
-    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=WLSOPR --from-literal=password='Wel2019-Come1#' --from-literal=url=jdbc:oracle:thin:@db.wlsopr.orcl.cloud:1521/wls_pdb1.subXXXXXXX.mydbswlsmydbswl.oraclevcn.com
+    kubectl -n sample-domain1-ns create secret generic dbsecret --from-literal=username=WLSOPR --from-literal=password='Wel2019-Come1#' --from-literal=url=jdbc:oracle:thin:@129.213.145.129:1521/PDB1.sub03040224550.dbvcn.oraclevcn.com
 
 Now create a label for your secret.
 
