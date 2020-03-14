@@ -24,9 +24,10 @@ Before using the CLI, you have to create a config file that contains the require
 
 Before you start the setup collect the necessary information using your OCI console.
 
-- User OCID
-- Tenancy OCID
-- Region
+<pre><code>>- User OCID
+- Tenancy OCID: <b><i>ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea</i></b>
+- Region: <b><i>us-ashburn-1</i></b>
+</code></pre>
 
 In the Console click on your OCI user name and select User Settings. On the user details page you can find the *user OCID*. Click **Copy** and paste temporary to a text editor.
 
