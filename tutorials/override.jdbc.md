@@ -194,7 +194,7 @@ Now check the expected values of the JDBC datasource using the demo Web Applicat
 
 `http://EXTERNAL-IP/opdemo/?dsname=testDatasource`
 
-![](images/override/updated.jdbc.properties.png)
+![](images/override/updated.jdbc.png)
 
 You have to see the following changes:
 - **Database User**: Your database user
