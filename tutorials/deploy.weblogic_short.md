@@ -149,6 +149,7 @@ spec:
           serviceName: sample-domain1-admin-server
           servicePort: 7001          
 EOF
+ingress.extensions/traefik-pathrouting-1 created
 ```
 
 
