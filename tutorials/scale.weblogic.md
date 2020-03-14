@@ -17,6 +17,7 @@ For example:
     
     vi /u01/domain.yaml
     
+
 Find the following part:
 ```
 clusters:
