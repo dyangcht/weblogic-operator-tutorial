@@ -10,7 +10,7 @@ has the `cluster-admin` role.  The default would be `default` in namespace `kube
 account the necessary permissions with this command:
 
 ```
-cat << EOF | kubectl apply -f -
+$ cat << EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -28,17 +28,19 @@ EOF
 
 The output has to be the following:
 
-    clusterrolebinding "helm-user-cluster-admin-role" created
+    clusterrolebinding.rbac.authorization.k8s.io/helm-user-cluster-admin-role created
 
 Kubernetes distinguishes between the concept of a user account and a service account for a number of reasons. The main reason is that user accounts are for humans while service accounts are for processes, which run in pods. WebLogic Operator also requires service accounts.  If service account not specified, it defaults to default (for example, the namespace's default service account). If you want to use a different service account, then you must create the operator's namespace and the service account before installing the operator Helm chart.
 
 Thus create operator's namespace in advance:
 
-    kubectl create namespace sample-weblogic-operator-ns
+    $ kubectl create namespace sample-weblogic-operator-ns
+    namespace/sample-weblogic-operator-ns created
 
 Create the service account:
 
-    kubectl create serviceaccount -n sample-weblogic-operator-ns sample-weblogic-operator-sa
+    $ kubectl create serviceaccount -n sample-weblogic-operator-ns sample-weblogic-operator-sa
+    serviceaccount/sample-weblogic-operator-sa created
 
 Make sure before execute operator `helm` install you are in the WebLogic Operator's local Git repository folder.
 
