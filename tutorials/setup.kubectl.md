@@ -104,7 +104,7 @@ The final step to complete the CLI setup to upload your freshly generated public
 
 Copy the content of the `oci_api_key_public.pem` file into the *PUBLIC KEY* text area and click **Add**.
 
-![alt text](images/oke/013.pem.public.png)
+![alt text](images/oke/013.pem.public2.png)
 
 The key is uploaded and its fingerprint is displayed in the list.
 
