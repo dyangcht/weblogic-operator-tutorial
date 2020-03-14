@@ -73,9 +73,9 @@ Execute `oci setup config` command to setup the CLI:
 	Enter a location for your config [/home/oracle/.oci/config]:
 
 Enter to accept default directory location `/home/oracle/.oci/config`. Provide your user and tenancy OCIDs.
-
-	Enter a user OCID: <YOUR_USER_OCID>
-	Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea
+<pre><code>Enter a user OCID: <em><i><YOUR_USER_OCID></i></em>
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6kb2n4qzopn3yuql74xyfsouotlgnhcu3faa44h4vx5il3pj6fea
+</code></pre>
 
 Enter your region. You can see in the console (browser) at the top right area. It has to be *us-ashburn-1*, if not type the proper region code.
 
@@ -126,7 +126,7 @@ Click **Access Kubeconfig**
 
 A dialog pops up which contains the customized OCI command that you need to execute to create Kubernetes configuration file.
 
-![alt text](images/oke/016.oci.cluster.download.script.png)
+![alt text](images/oke/016.oci.cluster.download.script2.png)
 
 Copy and execute the commands on your desktop where OCI CLI was configured. For example:
 
