@@ -20,7 +20,7 @@ More information about OKE and custom cluster deployment:
 
 ## Open the OCI console ##
 
-If you have signed into your OCI console before, you can go straight to the [OCI console page](https://console.us-ashburn-1.oraclecloud.com/#/a/)
+If you have signed into your OCI console before, you can go straight to the **[OCI console page](https://console.us-ashburn-1.oraclecloud.com/#/a/)**
 
   - Enter your Cloud Tenant and click **Continue**
 
