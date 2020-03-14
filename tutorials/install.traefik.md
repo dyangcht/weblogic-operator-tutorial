@@ -99,8 +99,9 @@ $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk
 Verify the `helm` charts:
 
     $ helm list
-    NAME            	REVISION	UPDATED                 	STATUS  	CHART         	NAMESPACE
-    traefik-operator	1       	Mon Feb  4 10:58:41 2019	DEPLOYED	traefik-1.59.2	traefik  
+    NAME                    	REVISION	UPDATED                 	STATUS  	CHART              	APP VERSION	NAMESPACE                  
+    sample-weblogic-operator	1       	Sat Mar 14 06:26:27 2020	DEPLOYED	weblogic-operator-2	           	sample-weblogic-operator-ns
+    traefik-operator        	1       	Sat Mar 14 06:27:28 2020	DEPLOYED	traefik-1.86.2     	1.7.20     	traefik                    
 
 You can also hit the Traefik's dashboard using `curl`. Use the EXTERNAL-IP address from the result above:
 
